@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b1aaem161ph5e"]
+
+[ext_resource type="Script" uid="uid://cthrtldapjnpi" path="res://player/player.gd" id="1_ulp21"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
+radius = 0.3
+height = 1.74
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehsmr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+material = SubResource("StandardMaterial3D_ehsmr")
+size = Vector3(0.6, 1.74, 0.6)
+
+[node name="Player" type="CharacterBody3D" unique_id=156402423]
+script = ExtResource("1_ulp21")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1335653287]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86957633, 0)
+shape = SubResource("CapsuleShape3D_g4v7s")
+
+[node name="Head" type="Node3D" parent="." unique_id=558858918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.459621, 0)
+
+[node name="Camera" type="Camera3D" parent="Head" unique_id=2146911480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08847523, 0)
+
+[node name="Body" type="MeshInstance3D" parent="." unique_id=1059574467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86957633, 0)
+mesh = SubResource("BoxMesh_g4v7s")

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cmwrimeg1mrop"]
+
+[ext_resource type="Texture2D" uid="uid://pj1dcwhka1r6" path="res://mock/GreyboxTextures/greybox_light_grid.png" id="1_3nngp"]
+[ext_resource type="PackedScene" uid="uid://b1aaem161ph5e" path="res://player/Player.tscn" id="2_vl2nf"]
+
+[sub_resource type="Environment" id="Environment_g4v7s"]
+ambient_light_source = 2
+ambient_light_color = Color(0.7034668, 0.71710914, 0.7444475, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehsmr"]
+albedo_texture = ExtResource("1_3nngp")
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g4v7s"]
+material = SubResource("StandardMaterial3D_ehsmr")
+size = Vector2(128, 128)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dfebi"]
+data = PackedVector3Array(64, 0, 64, -64, 0, 64, 64, 0, -64, -64, 0, 64, -64, 0, -64, 64, 0, -64)
+
+[node name="Factory" type="Node3D" unique_id=1839095869]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1413565023]
+environment = SubResource("Environment_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=153541662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0022630692, 2.3841858e-07, -0.011531949)
+mesh = SubResource("PlaneMesh_g4v7s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=468723013]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=239315828]
+shape = SubResource("ConcavePolygonShape3D_dfebi")
+
+[node name="Player" parent="." unique_id=156402423 instance=ExtResource("2_vl2nf")]

@@ -1,0 +1,218 @@
+{
+  "main": {
+    "id": "81f8508a5dd99579",
+    "type": "split",
+    "children": [
+      {
+        "id": "76f48cadb7448364",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ad291a2b61f1f355",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Personagens/0 - Player (Biel).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "0 - Player (Biel)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "9ee3a1f4209f59db",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "349cb259b0e9f87a",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Visualização em gráfico"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a4c0571da630354c",
+    "type": "split",
+    "children": [
+      {
+        "id": "e782e9c707aae55e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "00affde151883d11",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Explorador de arquivos"
+            }
+          },
+          {
+            "id": "a663abcaa8a765c2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Procurar"
+            }
+          },
+          {
+            "id": "76bd3af42a16636c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Marcadores"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "75c5627daebbef8b",
+    "type": "split",
+    "children": [
+      {
+        "id": "267c8306d6d5fbac",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f34041dd047dd7d9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Personagens/0 - Player (Biel).md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Links inversos para 0 - Player (Biel)"
+            }
+          },
+          {
+            "id": "b4dd35a0a22d6f4f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Personagens/0 - Player (Biel).md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Links de saída para 0 - Player (Biel)"
+            }
+          },
+          {
+            "id": "fbf13ed9709fd790",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Etiquetas"
+            }
+          },
+          {
+            "id": "bdfdb498b982dcb1",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "Todas as propriedades"
+            }
+          },
+          {
+            "id": "e8ed54b0d7e8764c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Personagens/0 - Player (Biel).md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Sumário de 0 - Player (Biel)"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir a troca rápida": false,
+      "graph:Abrir visualização em gráfico": false,
+      "canvas:Criar novo canvas": false,
+      "daily-notes:Abrir a nota de hoje": false,
+      "templates:Inserir modelo": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Criar nova base": false
+    }
+  },
+  "active": "ad291a2b61f1f355",
+  "lastOpenFiles": [
+    "Personagens/Primários/1.3 - Rômulo.md",
+    "Personagens/Secundários/Schiavon.md",
+    "História do jogo/1 - Capítulo 1.md",
+    "História do jogo/0 - Prólogo.md",
+    "Personagens/0 - Player (Biel).md",
+    "Personagens/Primários/1.2 - Filipe.md",
+    "Personagens/Primários/1.1 - Érico.md",
+    "Personagens/Terciários",
+    "Sem título",
+    "Personagens/Secundários",
+    "Personagens/Primários",
+    "Personagens",
+    "História do jogo"
+  ]
+}
