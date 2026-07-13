@@ -1,10 +1,19 @@
 [gd_scene format=3 uid="uid://b1aaem161ph5e"]
 
 [ext_resource type="Script" uid="uid://cthrtldapjnpi" path="res://player/player.gd" id="1_ulp21"]
+[ext_resource type="Shader" uid="uid://c56naw38r2k07" path="res://player/overlay.gdshader" id="2_3c3w1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
 radius = 0.3
 height = 1.74
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yf5fn"]
+render_priority = 0
+shader = ExtResource("2_3c3w1")
+shader_parameter/pixel_size = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g4v7s"]
+material = SubResource("ShaderMaterial_yf5fn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehsmr"]
 
@@ -20,10 +29,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86957633, 0)
 shape = SubResource("CapsuleShape3D_g4v7s")
 
 [node name="Head" type="Node3D" parent="." unique_id=558858918]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.459621, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7517748, -0.3822428)
 
 [node name="Camera" type="Camera3D" parent="Head" unique_id=2146911480]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08847523, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Camera" unique_id=2024006044]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, -0.984406)
+mesh = SubResource("PlaneMesh_g4v7s")
 
 [node name="Body" type="MeshInstance3D" parent="." unique_id=1059574467]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86957633, 0)

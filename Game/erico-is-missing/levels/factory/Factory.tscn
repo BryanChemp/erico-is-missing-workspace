@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cmwrimeg1mrop"]
 
 [ext_resource type="Texture2D" uid="uid://pj1dcwhka1r6" path="res://mock/GreyboxTextures/greybox_light_grid.png" id="1_3nngp"]
-[ext_resource type="PackedScene" uid="uid://b1aaem161ph5e" path="res://player/Player.tscn" id="2_vl2nf"]
+[ext_resource type="PackedScene" uid="uid://do2cxomqrxc2o" path="res://levels/factory/model/factory.glb" id="1_dfebi"]
+[ext_resource type="Script" uid="uid://cthrtldapjnpi" path="res://player/player.gd" id="3_aokda"]
+[ext_resource type="Shader" uid="uid://c56naw38r2k07" path="res://player/overlay.gdshader" id="4_1dt5a"]
 
 [sub_resource type="Environment" id="Environment_g4v7s"]
 ambient_light_source = 2
@@ -13,23 +15,77 @@ uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g4v7s"]
 material = SubResource("StandardMaterial3D_ehsmr")
-size = Vector2(128, 128)
+size = Vector2(1500, 1500)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dfebi"]
 data = PackedVector3Array(64, 0, 64, -64, 0, 64, 64, 0, -64, -64, 0, 64, -64, 0, -64, 64, 0, -64)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
+radius = 0.3
+height = 1.74
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dfebi"]
+render_priority = 0
+shader = ExtResource("4_1dt5a")
+shader_parameter/pixel_size = 4.0
+shader_parameter/levels = 100.0
+shader_parameter/gamma = Vector2(1, 1.2)
+shader_parameter/dithering_strength = 2.0
+shader_parameter/contrast = 1.0499999988824
+
+[sub_resource type="QuadMesh" id="QuadMesh_mn4rm"]
+material = SubResource("ShaderMaterial_dfebi")
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_habiv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+material = SubResource("StandardMaterial3D_habiv")
+size = Vector3(0.6, 1.74, 0.6)
+
 [node name="Factory" type="Node3D" unique_id=1839095869]
+
+[node name="factory" parent="." unique_id=1048255238 instance=ExtResource("1_dfebi")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1413565023]
 environment = SubResource("Environment_g4v7s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=153541662]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0022630692, 2.3841858e-07, -0.011531949)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0022630692, -0.30397964, -0.011531949)
 mesh = SubResource("PlaneMesh_g4v7s")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=468723013]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=239315828]
+transform = Transform3D(12.988073, 0, 0, 0, 1, 0, 0, 0, 18.171106, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_dfebi")
 
-[node name="Player" parent="." unique_id=156402423 instance=ExtResource("2_vl2nf")]
+[node name="Player" type="CharacterBody3D" parent="." unique_id=156402423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.25021, 0, -5.133221)
+script = ExtResource("3_aokda")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1335653287]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86957633, 0)
+shape = SubResource("CapsuleShape3D_g4v7s")
+
+[node name="Head" type="Node3D" parent="Player" unique_id=558858918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7517748, -0.3822428)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Player/Head" unique_id=1676646562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038887024, -0.5880325, -0.31186008)
+
+[node name="Camera" type="Camera3D" parent="Player/Head" unique_id=2146911480]
+transform = Transform3D(-0.36248645, -0.043974683, 0.930951, 0, 0.9988862, 0.047183692, -0.931989, 0.017103449, -0.36208272, 5.193817, 0.33130646, 0.9099264)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Head/Camera" unique_id=2024006044]
+transform = Transform3D(1, 0, 0, 0, -0.9999998, -8.742276e-08, 0, 8.742276e-08, -0.9999998, 0, 0, -0.984406)
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_mn4rm")
+
+[node name="Body" type="MeshInstance3D" parent="Player" unique_id=1059574467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86957633, 0)
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2140710946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.103546, 1.4255397, -2.0808225)
