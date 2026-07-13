@@ -11,6 +11,10 @@ height = 1.74
 render_priority = 0
 shader = ExtResource("2_3c3w1")
 shader_parameter/pixel_size = 0.0
+shader_parameter/levels = 0.0
+shader_parameter/gamma = Vector2(0, 0)
+shader_parameter/dithering_strength = 0.0
+shader_parameter/contrast = 0.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g4v7s"]
 material = SubResource("ShaderMaterial_yf5fn")

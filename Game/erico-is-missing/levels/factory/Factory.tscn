@@ -44,6 +44,8 @@ size = Vector2(2, 2)
 material = SubResource("StandardMaterial3D_habiv")
 size = Vector3(0.6, 1.74, 0.6)
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_7numd"]
+
 [node name="Factory" type="Node3D" unique_id=1839095869]
 
 [node name="factory" parent="." unique_id=1048255238 instance=ExtResource("1_dfebi")]
@@ -76,7 +78,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7517748, -0.3822428)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038887024, -0.5880325, -0.31186008)
 
 [node name="Camera" type="Camera3D" parent="Player/Head" unique_id=2146911480]
-transform = Transform3D(-0.36248645, -0.043974683, 0.930951, 0, 0.9988862, 0.047183692, -0.931989, 0.017103449, -0.36208272, 5.193817, 0.33130646, 0.9099264)
+transform = Transform3D(0.999227, 0.0032864932, 0.03917401, 0, 0.9964993, -0.08360104, -0.03931163, 0.08353642, 0.99572897, 0.009307861, 0.32019138, 0.4440832)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Head/Camera" unique_id=2024006044]
 transform = Transform3D(1, 0, 0, 0, -0.9999998, -8.742276e-08, 0, 8.742276e-08, -0.9999998, 0, 0, -0.984406)
@@ -86,6 +88,44 @@ mesh = SubResource("QuadMesh_mn4rm")
 [node name="Body" type="MeshInstance3D" parent="Player" unique_id=1059574467]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86957633, 0)
 mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=1291654544]
+
+[node name="TextureRect" type="TextureRect" parent="Player/CanvasLayer" unique_id=528958061]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 41.0
+grow_horizontal = 2
+texture = SubResource("CanvasTexture_7numd")
+
+[node name="TextureRect3" type="TextureRect" parent="Player/CanvasLayer" unique_id=1887805243]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -1091.0
+offset_bottom = 653.0
+grow_horizontal = 2
+texture = SubResource("CanvasTexture_7numd")
+
+[node name="TextureRect4" type="TextureRect" parent="Player/CanvasLayer" unique_id=1824873568]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1091.0
+offset_top = -2.0
+offset_bottom = 651.0
+grow_horizontal = 2
+texture = SubResource("CanvasTexture_7numd")
+
+[node name="TextureRect2" type="TextureRect" parent="Player/CanvasLayer" unique_id=1322807040]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 608.0
+offset_bottom = 649.0
+grow_horizontal = 2
+texture = SubResource("CanvasTexture_7numd")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2140710946]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.103546, 1.4255397, -2.0808225)
