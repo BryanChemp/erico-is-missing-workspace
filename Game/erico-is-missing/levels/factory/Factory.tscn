@@ -5,9 +5,24 @@
 [ext_resource type="Script" uid="uid://cthrtldapjnpi" path="res://player/player.gd" id="3_aokda"]
 [ext_resource type="Shader" uid="uid://c56naw38r2k07" path="res://player/overlay.gdshader" id="4_1dt5a"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hvsk3"]
+sky_top_color = Color(1, 1, 1, 1)
+sky_horizon_color = Color(0.6267832, 0.6121998, 0.6281386, 1)
+
+[sub_resource type="Sky" id="Sky_3anbw"]
+sky_material = SubResource("ProceduralSkyMaterial_hvsk3")
+
 [sub_resource type="Environment" id="Environment_g4v7s"]
-ambient_light_source = 2
-ambient_light_color = Color(0.7034668, 0.71710914, 0.7444475, 1)
+sky = SubResource("Sky_3anbw")
+ambient_light_source = 3
+reflected_light_source = 2
+ssao_radius = 0.77
+glow_levels/1 = 16.0
+glow_levels/2 = 8.11
+glow_levels/3 = 5.4
+fog_light_color = Color(0, 0, 0, 1)
+volumetric_fog_density = 0.028
+adjustment_saturation = 1.09
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehsmr"]
 albedo_texture = ExtResource("1_3nngp")
@@ -28,10 +43,12 @@ height = 1.74
 render_priority = 0
 shader = ExtResource("4_1dt5a")
 shader_parameter/pixel_size = 4.0
-shader_parameter/levels = 100.0
-shader_parameter/gamma = Vector2(1, 1.2)
-shader_parameter/dithering_strength = 2.0
-shader_parameter/contrast = 1.0499999988824
+shader_parameter/levels = 64.0
+shader_parameter/gamma = Vector2(1, 1)
+shader_parameter/dithering_strength = 0.6
+shader_parameter/contrast = 1.1
+shader_parameter/saturation = 1.3999999687072
+shader_parameter/smoothness = 0.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_mn4rm"]
 material = SubResource("ShaderMaterial_dfebi")
@@ -64,7 +81,7 @@ transform = Transform3D(12.988073, 0, 0, 0, 1, 0, 0, 0, 18.171106, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_dfebi")
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=156402423]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.25021, 0, -5.133221)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -112.7209, -0.05992496, -5.133221)
 script = ExtResource("3_aokda")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1335653287]
@@ -74,9 +91,6 @@ shape = SubResource("CapsuleShape3D_g4v7s")
 [node name="Head" type="Node3D" parent="Player" unique_id=558858918]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7517748, -0.3822428)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Player/Head" unique_id=1676646562]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038887024, -0.5880325, -0.31186008)
-
 [node name="Camera" type="Camera3D" parent="Player/Head" unique_id=2146911480]
 transform = Transform3D(0.999227, 0.0032864932, 0.03917401, 0, 0.9964993, -0.08360104, -0.03931163, 0.08353642, 0.99572897, 0.009307861, 0.32019138, 0.4440832)
 
@@ -84,6 +98,13 @@ transform = Transform3D(0.999227, 0.0032864932, 0.03917401, 0, 0.9964993, -0.083
 transform = Transform3D(1, 0, 0, 0, -0.9999998, -8.742276e-08, 0, 8.742276e-08, -0.9999998, 0, 0, -0.984406)
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_mn4rm")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Player/Head" unique_id=2091936981]
+transform = Transform3D(0.980403, -0.19700253, 0, 0.19700253, 0.980403, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+spot_range = 10.0
+spot_attenuation = 0.28
+spot_angle = 30.0
 
 [node name="Body" type="MeshInstance3D" parent="Player" unique_id=1059574467]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86957633, 0)
@@ -129,3 +150,7 @@ texture = SubResource("CanvasTexture_7numd")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2140710946]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.103546, 1.4255397, -2.0808225)
+light_volumetric_fog_energy = 3.599
+shadow_enabled = true
+omni_range = 4.426
+omni_attenuation = 0.422
