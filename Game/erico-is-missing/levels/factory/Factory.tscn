@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cmwrimeg1mrop"]
 
 [ext_resource type="Texture2D" uid="uid://pj1dcwhka1r6" path="res://mock/GreyboxTextures/greybox_light_grid.png" id="1_3nngp"]
-[ext_resource type="PackedScene" uid="uid://do2cxomqrxc2o" path="res://levels/factory/model/factory.glb" id="1_dfebi"]
+[ext_resource type="PackedScene" uid="uid://bhtalsf6o26w6" path="res://levels/factory/model/factory.glb" id="1_dfebi"]
 [ext_resource type="Script" uid="uid://cthrtldapjnpi" path="res://player/player.gd" id="3_aokda"]
 [ext_resource type="Shader" uid="uid://c56naw38r2k07" path="res://player/overlay.gdshader" id="4_1dt5a"]
 
@@ -65,8 +65,6 @@ size = Vector3(0.6, 1.74, 0.6)
 
 [node name="Factory" type="Node3D" unique_id=1839095869]
 
-[node name="factory" parent="." unique_id=1048255238 instance=ExtResource("1_dfebi")]
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1413565023]
 environment = SubResource("Environment_g4v7s")
 
@@ -92,7 +90,7 @@ shape = SubResource("CapsuleShape3D_g4v7s")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7517748, -0.3822428)
 
 [node name="Camera" type="Camera3D" parent="Player/Head" unique_id=2146911480]
-transform = Transform3D(0.999227, 0.0032864932, 0.03917401, 0, 0.9964993, -0.08360104, -0.03931163, 0.08353642, 0.99572897, 0.009307861, 0.32019138, 0.4440832)
+transform = Transform3D(0.9991576, 0.015031097, 0.03818596, -0.011776982, 0.99639136, -0.084056936, -0.03931163, 0.08353641, 0.995729, 0.009307861, 0.14082038, -0.01151371)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Head/Camera" unique_id=2024006044]
 transform = Transform3D(1, 0, 0, 0, -0.9999998, -8.742276e-08, 0, 8.742276e-08, -0.9999998, 0, 0, -0.984406)
@@ -154,3 +152,5 @@ light_volumetric_fog_energy = 3.599
 shadow_enabled = true
 omni_range = 4.426
 omni_attenuation = 0.422
+
+[node name="factory" parent="." unique_id=149042520 instance=ExtResource("1_dfebi")]
